@@ -1,0 +1,136 @@
+/* =========================================================
+   ARQUIVO DE APOIO - NÃO HÁ UMA SOLUÇÃO PRONTA AQUI.
+   Desenvolva o CSS da tarefa conforme o enunciado.
+   ========================================================= */
+
+/* Configuração geral */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Página */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 30px 15px;
+    background-color: #f2f2f2;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+header p {
+    color: #666;
+}
+
+/* Card */
+.card {
+    width: 100%;
+    min-height: 180px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* Desenvolva o restante do CSS. */
+
+/* Lembre-se de criar uma media query para telas
+   de até 768px quando a tarefa exigir responsividade. */
+
+
+
+   /* Equipamento */
+.equipamento, .controle {
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Equipamento desligado */
+.desligado {
+    background-color: #ddd;
+    color: #555;
+}
+
+/* Equipamento ligado */
+.ligado {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Bolinha do equipamento */
+.indicador {
+    width: 25px;
+    height: 25px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background-color: #777;
+}
+
+/* Bolinha quando estiver ligado */
+.ligado .indicador {
+    background-color: #00ff00;
+}
+
+/* Botões */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Botão resetar */
+.resetar {
+    background-color: #e74c3c;
+}
+
+.resetar:hover {
+    background-color: #c0392b;
+}
+
+/* Seletor de cor */
+.seletor-cor {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="color"] {
+    width: 60px;
+    height: 40px;
+    cursor: pointer;
+}
+
+

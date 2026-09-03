@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa 01 - Controle do Equipamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Controle do Equipamento</h1>
+            <p>Desenvolva a interface solicitada na avaliação.</p>
+        </header>
+
+        <section id="controle" class="card">
+
+            <div id="equipamento" class="equipamento desligado">
+
+                <div class="indicador"></div>
+
+                <h2 id="status">DESLIGADO</h2>
+
+                
+
+            </div>
+
+            <!-- Botão para ligar/desligar -->
+            <button id="botaoLigar">Desligado</button>
+
+            <!-- Seletor de cor -->
+            <div class="seletor-cor">
+
+                <label for="cor">
+                    Escolha uma cor:
+                </label>
+
+                <input type="color" id="cor" value="#3498db"
+                >
+
+            </div>
+
+            <!-- Botão resetar -->
+            <button id="botaoResetar" class="resetar">
+                Resetar
+            </button>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
