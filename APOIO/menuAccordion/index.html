@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Accordion</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 400px;
+        margin: auto;
+      }
+
+      input {
+        display: none;
+      }
+
+      label {
+        display: block; /* Posição fixa */
+        background: #333; /* Cor do elemento */
+        color: white; /* Cor do Texto */
+        padding: 15px; /* Espaçamento interno */
+        cursor: pointer; /* Estilo do mouse */
+      }
+
+      .conteudo {
+        max-height: 0; /* Altura máxima */
+        overflow: hidden; /* Não quebra conforme tamanho da tela */
+        background: #eee; /* Cor do elemento */
+        transition: 0.3s; /* Transição ao abrir menu */
+        padding: 0 10px; /* Espaçamento interno */
+      }
+
+      /*  DESAFIO: Criar funcionalidade CSS para abrir 
+      e fechar o menu */
+
+      input:checked + label + .conteudo {
+        max-height: 200px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="radio" name="menu" id="sec1" />
+    <label for="sec1">Seção 1</label>
+    <div class="conteudo">Conteúdo da Seção 1</div>
+
+    <input type="radio" name="menu" id="sec2" />
+    <label for="sec2">Seção 2</label>
+    <div class="conteudo">Conteúdo da Seção 2</div>
+
+    <input type="radio" name="menu" id="sec3" />
+    <label for="sec3">Seção 3</label>
+    <div class="conteudo">Conteúdo da Seção 3</div>
+  </body>
+</html>

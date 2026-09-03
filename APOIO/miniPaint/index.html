@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Paint</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        canvas {
+            border: 2px solid black;
+            cursor: crosshair; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Mini Paint</h1>
+    <input type="color" id="cor"> 
+    <button id="limpar">Limpar</button>
+    <button id="exportar">Exportar</button>
+    <br>
+    <br>
+    <canvas id="tela" width="600" height="400"></canvas>
+
+    <script>
+        const tela = document.getElementById("tela");
+        const ctx = tela.getContext("2d");
+
+
+        let desenhando = false;
+
+        tela.onmousedown = () => {
+            desenhando = true;
+            ctx.beginPath();
+        }
+        tela.onmouseup = () => desenhando = false;
+
+        tela.onmousemove = e => {
+            if (!desenhando) return;
+            ctx.strokeStyle = cor.value;
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+        };
+
+        tela.onmouseleave = () => {
+            desenhando = false;
+            ctx.beginPath();
+        }
+
+        limpar.onclick = () =>
+            ctx.clearRect(0, 0, tela.width, tela.height);
+            
+            ctx.fillStyle = "white"; // Declara o fundo com a cor branca
+            ctx.fillRect(0, 0, tela.width, tela.height); // Limpar
+            
+/*         exportar.onclick = () => {
+            const link = document.createElement("a"); // Cria a tag <a>
+            link.download = "minipaint.png";
+            link.href = tela.toDataURL();
+            link.click();
+        } */
+        
+
+        function baixarCanvas() {
+            const link = document.createElement("a"); // Cria a tag <a>
+            link.download = "minipaint.png";
+            link.href = tela.toDataURL("image/png");
+            link.click();
+        }
+
+        document.getElementById("exportar").onclick = baixarCanvas;
+
+        // Desafio: Criar função para exportar e corrigir limpar completamente 
+        
+    </script>
+</body>
+</html>

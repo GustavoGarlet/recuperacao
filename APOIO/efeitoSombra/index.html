@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito Blur</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .codigo {
+            display: flex;
+            gap: 20px
+        }
+
+        .codigo span{
+            color: white;
+            font-size: clamp(45px, 80px, 80px);
+            filter: blur(20px);
+            transition: 0.3s;
+        }
+
+        /* Número em Foco */
+        .codigo span:hover,
+        .codigo span:active {
+            filter: blur(0);
+            transform: scale(1.08);
+        }
+
+        /* Número da direita */
+        .codigo span:hover + span {
+            filter: blur(6px);
+        }
+
+        /* Segundo número da direita */
+        .codigo span:hover + span + span {
+            filter: blur(10px);
+        }
+
+        /*ATALHOS: SHIFT + ALT + A */ /* CTRl + ; */
+        /* Número da esquerda */
+        .codigo span:has(+ span:hover){
+            filter: blur(6px);
+        }
+        
+        /* Segundo Número da esquerda */
+        .codigo span:has(+ span + span:hover){
+            filter: blur(10px);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="codigo">
+        <span>2</span>
+        <span>4</span>
+        <span>6</span>
+        <span>8</span>
+        <span>10</span>
+        <span>0</span>
+    </div>
+</body>
+</html>
